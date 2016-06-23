@@ -18,26 +18,27 @@
     <script type="text/javascript" src="app.js"></script>
 
     <script type="text/javascript" src="components/person/person.js"></script>
-    <script type="text/javascript" src="components/modulo1/controllers/modulo1Controllers.js"></script>
-    <script type="text/javascript" src="components/modulo1/directives/modulo1Directives.js"></script>
-    <script type="text/javascript" src="components/modulo1/services/modulo1Services.js"></script>
+    <script type="text/javascript" src="components/person/controllers/personController.js"></script>
+    <script type="text/javascript" src="components/person/services/personServices.js"></script>
+    <script type="text/javascript" src="components/person/directives/personDirectives.js"></script>
 
+    <script type="text/javascript" src="components/login/login.js"></script>
+    <script type="text/javascript" src="components/login/controllers/loginController.js"></script>
+    <script type="text/javascript" src="components/login/services/loginServices.js"></script>
+    <script type="text/javascript" src="components/login/directives/loginDirectives.js"></script>
 
-    <script type="text/javascript" src="components/person/person.js"></script>
-    <script type="text/javascript" src="components/modulo2/controllers/modulo2Controllers.js"></script>
-    <script type="text/javascript" src="components/modulo2/directives/modulo2Directives.js"></script>
-    <script type="text/javascript" src="components/modulo2/services/modulo2Services.js"></script>
-
-
-
-
-
-
-
+    <script type="text/javascript" src="components/error/error.js"></script>
+    <script type="text/javascript" src="components/error/controllers/errorController.js"></script>
 
 
   </head>
   <body>
+    <body ng-app="peopleManager">
+      <div class="container-fluid">
+        <toaster-container></toaster-container>
+        <div ui-view></div>
+      </div>
+    </body>
 
   </body>
 </html>
