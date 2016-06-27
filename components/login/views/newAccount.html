@@ -1,0 +1,136 @@
+<div class="row">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6">
+    <h3 class="text-center">Nueva cuenta</h3>
+  </div>
+  <div class="col-md-3">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6">
+    <p ng-show="newAccountForm.$submitted && !newAccountForm.$valid" class="has-error">Campos vacíos o con formato invalido.</p>
+    <form role="form" name="newAccountForm" id="newAccountForm" ng-submit="createAccount(newAccountForm.$valid)" novalidate>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="firstName">Nombres:</label>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <p ng-show="newAccountForm.firstName.$invalid && !newAccountForm.firstName.$pristine" class="has-error">Nombre invalido.</p>
+            <input  class="form-control" name="firstName" type="text" ng-model="user.firstName" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="lastName">Apellidos:</label>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <p ng-show="newAccountForm.lastName.$invalid && !newAccountForm.lastName.$pristine" class="has-error">Apellido invalido.</p>
+            <input class="form-control" name="lastName" type="text" ng-model="user.lastName" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="password">Password:</label>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <p ng-show="newAccountForm.password.$error.required && !newAccountForm.password.$pristine" class="has-error">Password es invalido.</p>
+            <input class="form-control" name="password" type="password" ng-model="user.password" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="email">Email:</label>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <p ng-show="newAccountForm.email.$invalid && !newAccountForm.email.$pristine" class="has-error">Email es invalido.</p>
+            <input class="form-control" name="email" type="email" ng-model="user.email" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="job">Ocupación:</label>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input class="form-control" name="job" type="text" ng-model="user.job" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="bio">Acerca de ti:</label>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <textarea class="form-control" id="bio" cols="45" rows="3" ng-model="user.bio"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+         <label for="birthDate">Fecha de nacimiento (año-mes-dia)</label>
+        </div>
+        <div class="col-md-6">
+          <p ng-show="newAccountForm.birthDate.$invalid && !newAccountForm.birthDate.$pristine" class="has-error">Formato de fecha invalido</p>
+          <p class="input-group">
+            <input  class="form-control" name="birthDate" type="date" class="form-control" uib-datepicker-popup ng-model="user.birthdate" is-open="date1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" required/>
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default" ng-click="openDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="gender">Gender:</label>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <p ng-show="newAccountForm.gender.$invalid && !newAccountForm.gender.$pristine" class="has-error">Gender is required.</p>
+            <select
+              name="gender"
+              class="form-control"
+              ng-model="user.gender" required>
+              <option value="M">Masculino</option>
+              <option value="F">Femenino</option>
+              <option value="N">N/A</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-md-6">
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">Crear una cuenta</button>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="form-group">
+            <button class="btn btn-default" type="reset" ng-click="backToLogin()">Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-3">
+  </div>
+</div>

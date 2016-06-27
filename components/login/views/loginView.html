@@ -1,0 +1,58 @@
+<div class="login-wrapper">
+  <div class="row">
+    <div class="col-md-2">
+      <!-- espacio vacío -->
+    </div>
+    <div class="col-xs-8 col-md-8">
+      <p ng-show="loginForm.$submitted && !loginForm.$valid"
+         class="has-error">
+         Campos vacíos o con formato invalido
+      </p>
+      <form role="form" name="loginForm" ng-submit="login()" novalidate>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" name="email" class="form-control" ng-model="user.email" required>
+            <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine" class="has-error">
+              Email invalido.
+            </p>
+            <p ng-show="loginForm.email.$error.required && !loginForm.email.$pristine" class="has-error">
+              Email es un campo obligatorio.
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" class="form-control" ng-model="user.password" required>
+            <p ng-show="loginForm.password.$error.required && !loginForm.password.$pristine" class="has-error">
+              Password es necesaria para ingresar a la aplicación.
+            </p>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit" ng-disabled="!loginForm.$valid">Login</button>
+            <button class="btn btn-default" type="reset">Cancel</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-2">
+      <!-- espacio vacío -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <!-- espacio vacío -->
+    </div>
+    <div class="col-xs-8 col-md-8">
+      <div class="row">
+        <div class="jumbotron">
+          <h1>Tomate Stock</h1>
+          <p>Esta es un sample app HTML + Bootstrap + Angular, trabajada en el Bootcamp Web con el profe @gtrujillop</p>
+        </div>
+      </div>
+      <div class="row">
+        <p>¿No tienes una cuenta? Registrate <a class="link" ng-click="signIn()">aqui</a></p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <!-- espacio vacío -->
+    </div>
+  </div>
+</div>
